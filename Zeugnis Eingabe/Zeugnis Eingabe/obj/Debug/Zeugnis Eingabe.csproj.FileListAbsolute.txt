@@ -1,0 +1,6 @@
+C:\Users\schulung.SCHULUNGNB-03\Documents\SPT-2022-Gruppe-2\Zeugnis Eingabe\Zeugnis Eingabe\bin\Debug\Zeugnis Eingabe.exe.config
+C:\Users\schulung.SCHULUNGNB-03\Documents\SPT-2022-Gruppe-2\Zeugnis Eingabe\Zeugnis Eingabe\bin\Debug\Zeugnis Eingabe.exe
+C:\Users\schulung.SCHULUNGNB-03\Documents\SPT-2022-Gruppe-2\Zeugnis Eingabe\Zeugnis Eingabe\bin\Debug\Zeugnis Eingabe.pdb
+C:\Users\schulung.SCHULUNGNB-03\Documents\SPT-2022-Gruppe-2\Zeugnis Eingabe\Zeugnis Eingabe\obj\Debug\Zeugnis Eingabe.csprojResolveAssemblyReference.cache
+C:\Users\schulung.SCHULUNGNB-03\Documents\SPT-2022-Gruppe-2\Zeugnis Eingabe\Zeugnis Eingabe\obj\Debug\Zeugnis Eingabe.exe
+C:\Users\schulung.SCHULUNGNB-03\Documents\SPT-2022-Gruppe-2\Zeugnis Eingabe\Zeugnis Eingabe\obj\Debug\Zeugnis Eingabe.pdb
