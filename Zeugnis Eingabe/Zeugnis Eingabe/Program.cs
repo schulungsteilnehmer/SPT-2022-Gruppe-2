@@ -36,10 +36,7 @@ namespace Zeugnis_Eingabe
 			int Fehltage;
 			int EntschuldigteFehltage;
 			
-			int LKZähler1;
 			
-			int Lk1Nummer;
-			int Lk2Nummer;
 			
 			double Notendurchschnitt=0;
 			
@@ -90,18 +87,78 @@ namespace Zeugnis_Eingabe
 			
 			
 			Console.Write("1.Leistungskurs: ");
-			Lk1 = Convert.ToString(Console.ReadLine());
-			Console.Write("Punktzahl in dem Leistungskurs: ");
-			Lk1Nummer = Convert.ToInt32(Console.ReadLine());
-			
+			Lk1 = Convert.ToString(Console.ReadLine());		
 			
 			
 			Console.Write("2.Leistungskurs: ");
 			Lk2 = Convert.ToString(Console.ReadLine());
-			Console.Write("Punktzahl in dem Leistungskurs: ");
-			Lk2Nummer = Convert.ToInt32(Console.ReadLine());
+
 			
-			
+			 if (Lk1=="Biologie")
+            {
+                Biologie=2*Biologie;
+            }
+              if (Lk2=="Biologie")
+            {
+                Biologie=2*Biologie;
+            }
+            if (Lk1=="Mathe")
+              {
+                  Mathe=2*Mathe;
+              }
+             if (Lk2=="Mathe")
+              {
+                  Mathe=2*Mathe;
+              }
+              if (Lk1=="Deutsch")
+              {
+                  Deutsch=2*Deutsch;
+              }
+             if (Lk2=="Deutsch")
+              {
+                  Deutsch=2*Deutsch;
+              }
+             if (Lk1=="Englisch")
+              {
+                 Englisch=2*Englisch;
+              }
+            
+             if (Lk2=="Englisch")
+              {
+                 Englisch=2*Englisch;
+              }
+              if (Lk1=="Chemie")
+              {
+                 Chemie=2*Chemie;
+              }
+               if (Lk2=="Chemie")
+              {
+                 Chemie=2*Chemie;
+              }
+               if (Lk1=="Geschichte")
+              {
+                 Geschichte=2*Geschichte;
+              }
+              if (Lk2=="Geschichte")
+              {
+                 Geschichte=2*Geschichte;
+              }
+              if (Lk1=="Sport")
+              {
+                 Sport=2*Sport;
+              }
+               if (Lk2=="Sport")
+              {
+                 Sport=2*Sport;
+              }
+              if (Lk2=="Musik")
+              {
+                 Musik=2*Musik;
+              }
+              if (Lk1=="Musik")
+              {
+                 Musik=2*Musik;
+              }
 			
 			
 			Console.Write("Entschuldigte Fehltage: ");
@@ -122,7 +179,7 @@ namespace Zeugnis_Eingabe
 			
 			//Durschnitt berechnen
 			
-			gesamtwert = Deutsch+Englisch+Mathe+Biologie+Chemie+Musik+Sport+Geschichte+Lk1Nummer+Lk2Nummer;
+			gesamtwert = Deutsch+Englisch+Mathe+Biologie+Chemie+Musik+Sport+Geschichte;
 			
 			while(eingabe != "-1")
 			{
