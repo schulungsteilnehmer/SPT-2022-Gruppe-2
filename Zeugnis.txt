@@ -1,0 +1,22 @@
+======================Zeugnis======================
+Name: h
+Datum: 1
+===================================================
+
+Leistungskurse: Chemie, Mathe
+
+Mathe: 12
+Deutsch: 12
+Englisch: 12
+Biologie: 12
+Chemie: 12
+Sport: 12
+Musik: 12
+Geschichte: 12
+
+Durchschnittsnote: 1,7
+===================================================
+Fehltage: 0
+Davon Unentschuldigt: 0
+
+Schüler*in wird versetzt.

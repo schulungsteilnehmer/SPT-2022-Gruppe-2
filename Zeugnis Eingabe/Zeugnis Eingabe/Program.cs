@@ -36,7 +36,7 @@ namespace Zeugnis_Eingabe
 			int Fehltage;
 			int EntschuldigteFehltage;
 			
-			
+			int Lk1Note=0, Lk2Note=0;
 			
 			double Notendurchschnitt=0;
 			
@@ -49,7 +49,7 @@ namespace Zeugnis_Eingabe
 				Console.Clear();
 				
 				Console.Write("Name: ");
-			Name = Convert.ToString(Console.ReadLine());
+				Name = Convert.ToString(Console.ReadLine());
 			}
 			
 			Console.Write("Datum: ");
@@ -57,11 +57,6 @@ namespace Zeugnis_Eingabe
 			
 			Console.Write("Deutsch: ");
 			Deutsch = Convert.ToInt32(Console.ReadLine());
-			
-			if (Deutsch>15)
-			{
-				Console.Write("Diese Punktzahl gibt es nicht. Punktbereich von 0-15!");
-			}
 			
 			Console.Write("Englisch: ");
 			Englisch = Convert.ToInt32(Console.ReadLine());
@@ -87,78 +82,78 @@ namespace Zeugnis_Eingabe
 			
 			
 			Console.Write("1.Leistungskurs: ");
-			Lk1 = Convert.ToString(Console.ReadLine());		
+			Lk1 = Convert.ToString(Console.ReadLine());
 			
 			
 			Console.Write("2.Leistungskurs: ");
 			Lk2 = Convert.ToString(Console.ReadLine());
 
 			
-			 if (Lk1=="Biologie")
-            {
-                Biologie=2*Biologie;
-            }
-              if (Lk2=="Biologie")
-            {
-                Biologie=2*Biologie;
-            }
-            if (Lk1=="Mathe")
-              {
-                  Mathe=2*Mathe;
-              }
-             if (Lk2=="Mathe")
-              {
-                  Mathe=2*Mathe;
-              }
-              if (Lk1=="Deutsch")
-              {
-                  Deutsch=2*Deutsch;
-              }
-             if (Lk2=="Deutsch")
-              {
-                  Deutsch=2*Deutsch;
-              }
-             if (Lk1=="Englisch")
-              {
-                 Englisch=2*Englisch;
-              }
-            
-             if (Lk2=="Englisch")
-              {
-                 Englisch=2*Englisch;
-              }
-              if (Lk1=="Chemie")
-              {
-                 Chemie=2*Chemie;
-              }
-               if (Lk2=="Chemie")
-              {
-                 Chemie=2*Chemie;
-              }
-               if (Lk1=="Geschichte")
-              {
-                 Geschichte=2*Geschichte;
-              }
-              if (Lk2=="Geschichte")
-              {
-                 Geschichte=2*Geschichte;
-              }
-              if (Lk1=="Sport")
-              {
-                 Sport=2*Sport;
-              }
-               if (Lk2=="Sport")
-              {
-                 Sport=2*Sport;
-              }
-              if (Lk2=="Musik")
-              {
-                 Musik=2*Musik;
-              }
-              if (Lk1=="Musik")
-              {
-                 Musik=2*Musik;
-              }
+			if (Lk1=="Biologie")
+			{
+				Lk1Note=Biologie;
+			}
+			if (Lk2=="Biologie")
+			{
+				Lk2Note=Biologie;
+			}
+			if (Lk1=="Mathe")
+			{
+				Lk1Note=Mathe;
+			}
+			if (Lk2=="Mathe")
+			{
+				Lk2Note=Mathe;
+			}
+			if (Lk1=="Deutsch")
+			{
+				Lk1Note=Deutsch;
+			}
+			if (Lk2=="Deutsch")
+			{
+				Lk2Note=Deutsch;
+			}
+			if (Lk1=="Englisch")
+			{
+				Lk1Note=Englisch;
+			}
+			
+			if (Lk2=="Englisch")
+			{
+				Lk2Note=Englisch;
+			}
+			if (Lk1=="Chemie")
+			{
+				Lk1Note=Chemie;
+			}
+			if (Lk2=="Chemie")
+			{
+				Lk2Note=Chemie;
+			}
+			if (Lk1=="Geschichte")
+			{
+				Lk1Note=Geschichte;
+			}
+			if (Lk2=="Geschichte")
+			{
+				Lk2Note=Geschichte;
+			}
+			if (Lk1=="Sport")
+			{
+				Lk1Note=Sport;
+			}
+			if (Lk2=="Sport")
+			{
+				Lk2Note=Sport;
+			}
+			if (Lk2=="Musik")
+			{
+				Lk2Note=Musik;
+			}
+			if (Lk1=="Musik")
+			{
+				Lk1Note=Musik;
+			}
 			
 			
 			Console.Write("Entschuldigte Fehltage: ");
@@ -168,18 +163,12 @@ namespace Zeugnis_Eingabe
 			Fehltage = Convert.ToInt32(Console.ReadLine());
 			
 			
-			if (Chemie>15)
-			{
-				Console.Write("Diese Punktzahl gibt es nicht. Punktbereich von 0-15!");
-			}
-			
-			
 			
 			
 			
 			//Durschnitt berechnen
 			
-			gesamtwert = Deutsch+Englisch+Mathe+Biologie+Chemie+Musik+Sport+Geschichte;
+			gesamtwert = Deutsch+Englisch+Mathe+Biologie+Chemie+Musik+Sport+Geschichte+Lk1Note+Lk2Note;
 			
 			while(eingabe != "-1")
 			{
@@ -193,7 +182,7 @@ namespace Zeugnis_Eingabe
 					durchschnitt = Math.Round(durchschnitt,1);
 					Console.WriteLine("Der Durchschnitt ist " + durchschnitt);
 					
-					 Notendurchschnitt = (17-durchschnitt)/3;
+					Notendurchschnitt = (17-durchschnitt)/3;
 					Notendurchschnitt= Math.Round(Notendurchschnitt,1);
 					Console.WriteLine("Umgerechnet in Noten ist der Durchschnitt " + Notendurchschnitt);
 				}
@@ -218,6 +207,8 @@ namespace Zeugnis_Eingabe
 			Console.WriteLine("Datum: "+ Datum);
 			Console.WriteLine("===================================================");
 			Console.WriteLine("");
+			Console.WriteLine("Leistungskurse: " + Lk1 + ", " + Lk2);
+			Console.WriteLine("");
 			Console.WriteLine("Mathe: "+ Mathe);
 			Console.WriteLine("Deutsch: "+ Deutsch);
 			Console.WriteLine("Englisch: "+ Englisch);
@@ -238,6 +229,8 @@ namespace Zeugnis_Eingabe
 			sw.WriteLine("Name: "+ Name);
 			sw.WriteLine("Datum: "+ Datum);
 			sw.WriteLine("===================================================");
+			sw.WriteLine("");
+			sw.WriteLine("Leistungskurse: " + Lk1 + ", " + Lk2);
 			sw.WriteLine("");
 			sw.WriteLine("Mathe: "+ Mathe);
 			sw.WriteLine("Deutsch: "+ Deutsch);
