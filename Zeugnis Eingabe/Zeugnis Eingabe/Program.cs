@@ -8,6 +8,7 @@
  */
 using System;
 using System.Text.RegularExpressions;
+using System.IO;
 
 namespace Zeugnis_Eingabe
 {
@@ -18,6 +19,7 @@ namespace Zeugnis_Eingabe
 			string Name;
 			string Datum;
 			
+			StreamWriter sw = new StreamWriter(@"C:\Users\schulung.SCHULUNGNB-03\Documents\SPT-2022-Gruppe-2\Zeugnis.txt");
 			//durchschnitt
 			string eingabe = "0";
 			int anzahl = 10;
@@ -38,6 +40,8 @@ namespace Zeugnis_Eingabe
 			
 			int Lk1Nummer;
 			int Lk2Nummer;
+			
+			double Notendurchschnitt=0;
 			
 			Console.Write("Name: ");
 			Name = Convert.ToString(Console.ReadLine());
@@ -114,6 +118,85 @@ namespace Zeugnis_Eingabe
 			
 			
 			
+			
+			
+			//Durschnitt berechnen
+			
+			gesamtwert = Deutsch+Englisch+Mathe+Biologie+Chemie+Musik+Sport+Geschichte+Lk1Nummer+Lk2Nummer;
+			
+			while(eingabe != "-1")
+			{
+				Console.WriteLine("Geben Sie -1 ein um den Durchschnitt zu berechnen");
+				
+				eingabe = Console.ReadLine();
+				if(eingabe == "-1")
+				{
+					Console.WriteLine("--------------------------------------------------------------");
+					double durchschnitt = (double)gesamtwert / (double)anzahl;
+					durchschnitt = Math.Round(durchschnitt,1);
+					Console.WriteLine("Der Durchschnitt ist " + durchschnitt);
+					
+					 Notendurchschnitt = (17-durchschnitt)/3;
+					Notendurchschnitt= Math.Round(Notendurchschnitt,1);
+					Console.WriteLine("Umgerechnet in Noten ist der Durchschnitt " + Notendurchschnitt);
+				}
+				
+				if(Int32.TryParse(eingabe, out aktuelleZahl) && aktuelleZahl >0 && aktuelleZahl<16){
+					gesamtwert=gesamtwert+aktuelleZahl;
+				}
+				else
+				{
+					if(!(eingabe=="-1"))
+					{
+						Console.WriteLine("Bitte geben Sie ganzzahlige Werte zwischen 1 und 15 ein!");
+					}
+					continue;
+				}
+				anzahl++;
+			}
+			
+			Console.Clear();
+			Console.WriteLine("======================Zeugnis======================");
+			Console.WriteLine("Name: "+ Name);
+			Console.WriteLine("Datum: "+ Datum);
+			Console.WriteLine("===================================================");
+			Console.WriteLine("");
+			Console.WriteLine("Mathe: "+ Mathe);
+			Console.WriteLine("Deutsch: "+ Deutsch);
+			Console.WriteLine("Englisch: "+ Englisch);
+			Console.WriteLine("Biologie: "+ Biologie);
+			Console.WriteLine("Chemie: "+ Chemie);
+			Console.WriteLine("Sport: "+ Sport);
+			Console.WriteLine("Musik: "+ Musik);
+			Console.WriteLine("Geschichte: "+ Geschichte);
+			Console.WriteLine("");
+			Console.WriteLine("Durchschnittsnote: " + Notendurchschnitt);
+			Console.WriteLine("===================================================");
+			Console.WriteLine("Fehltage: " + EntschuldigteFehltage);
+			Console.WriteLine("Davon Unentschuldigt: "+Fehltage);
+			Console.WriteLine("");
+			
+			
+			sw.WriteLine("======================Zeugnis======================");
+			sw.WriteLine("Name: "+ Name);
+			sw.WriteLine("Datum: "+ Datum);
+			sw.WriteLine("===================================================");
+			sw.WriteLine("");
+			sw.WriteLine("Mathe: "+ Mathe);
+			sw.WriteLine("Deutsch: "+ Deutsch);
+			sw.WriteLine("Englisch: "+ Englisch);
+			sw.WriteLine("Biologie: "+ Biologie);
+			sw.WriteLine("Chemie: "+ Chemie);
+			sw.WriteLine("Sport: "+ Sport);
+			sw.WriteLine("Musik: "+ Musik);
+			sw.WriteLine("Geschichte: "+ Geschichte);
+			sw.WriteLine("");
+			sw.WriteLine("Durchschnittsnote: " + Notendurchschnitt);
+			sw.WriteLine("===================================================");
+			sw.WriteLine("Fehltage: " + EntschuldigteFehltage);
+			sw.WriteLine("Davon Unentschuldigt: "+Fehltage);
+			sw.WriteLine("");
+			
 			if (Sport<5)
 			{
 				AnzahlUnterkurse= AnzahlUnterkurse +1;
@@ -149,54 +232,22 @@ namespace Zeugnis_Eingabe
 			if (AnzahlUnterkurse>1)
 			{
 				Console.Write("Schüler*in wird nicht versetzt.");
+				sw.Write("Schüler*in wird nicht versetzt.");
 			}
 			else
 				if (Fehltage>29)
 			{
 				Console.Write("Schüler*in wird nicht versetzt.");
+				sw.Write("Schüler*in wird nicht versetzt.");
 			}
 			if (AnzahlUnterkurse<2 && Fehltage<30)
 			{
 				Console.Write("Schüler*in wird versetzt.");
-			}
-			
-			//Durschnitt berechnen
-			
-			gesamtwert = Deutsch+Englisch+Mathe+Biologie+Chemie+Musik+Sport+Geschichte+Lk1Nummer+Lk2Nummer;
-			
-			while(eingabe != "-1")
-			{
-				Console.WriteLine("Geben Sie -1 ein um den Durchschnitt zu berechnen");
-				
-				eingabe = Console.ReadLine();
-				if(eingabe == "-1")
-				{
-					Console.WriteLine("--------------------------------------------------------------");
-					double durchschnitt = (double)gesamtwert / (double)anzahl;
-					durchschnitt = Math.Round(durchschnitt,1);
-					Console.WriteLine("Der Durchschnitt ist " + durchschnitt);
-					
-					double Notendurchschnitt = (17-durchschnitt)/3;
-					Notendurchschnitt= Math.Round(Notendurchschnitt,1);
-					Console.WriteLine("Umgerechnet in Noten ist der Durchschnitt " + Notendurchschnitt);
-				}
-				
-				if(Int32.TryParse(eingabe, out aktuelleZahl) && aktuelleZahl >0 && aktuelleZahl<16){
-					gesamtwert=gesamtwert+aktuelleZahl;
-				}
-				else
-				{
-					if(!(eingabe=="-1"))
-					{
-						Console.WriteLine("Bitte geben Sie ganzzahlige Werte zwischen 1 und 15 ein!");
-					}
-					continue;
-				}
-				anzahl++;
+				sw.Write("Schüler*in wird versetzt.");
 			}
 			
 			
-			
+			sw.Close();
 			Console.ReadKey(true);
 		}
 	}
